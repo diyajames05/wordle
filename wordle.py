@@ -9,4 +9,34 @@ wordlist = [
 import random
 word_index= random.randrange(0,len(wordlist))
 word= wordlist[word_index]
-print ("the seclected word is",word)
+print ("I have selected a 5 letter word, now give me your guesses")
+
+def check_input(selected_word, guess):
+
+    return False
+
+
+
+i = 1
+while i < 7:
+  # read input from user
+  prompt = "Enter your guess number " + str(i) + ":"
+  guess= input(prompt)
+  print(guess)
+  status = check_input(word,guess)  
+  # success = check_input(selected_word,guess)
+  
+  # check if input is correct
+  if status == True:
+    print ("hooray, you guessed the word!")
+    quit()
+  else: 
+    print("try again")
+     # if successful print "Hooray" and exit program
+  # 
+  i = i + 1
+
+# 6 tries are over. The word was ()
+
+
+
