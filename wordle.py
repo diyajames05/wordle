@@ -7,14 +7,33 @@ wordlist = [
 ]
 
 import random
+
+def check_input(selected_word, guess):
+    letters_present=[]
+    perfectmatches=0
+    for i in range(5):
+    
+        if word[i]==guess[i]:
+                print (word[i],end='')
+                perfectmatches=perfectmatches+1
+
+        else:
+                print("_",end='')
+                if guess[i] in word:
+                    letters_present.append (guess[i])
+    
+    print(letters_present)             
+    
+    if perfectmatches==5:
+        return True
+    else:
+        return False
+
+
+
 word_index= random.randrange(0,len(wordlist))
 word= wordlist[word_index]
 print ("I have selected a 5 letter word, now give me your guesses")
-
-def check_input(selected_word, guess):
-
-    return False
-
 
 
 i = 1
@@ -31,12 +50,12 @@ while i < 7:
     print ("hooray, you guessed the word!")
     quit()
   else: 
-    print("try again")
+    print(" try again")
      # if successful print "Hooray" and exit program
   # 
   i = i + 1
 
 # 6 tries are over. The word was ()
 
-
+print("the word was,", word)
 
